@@ -4,7 +4,10 @@
 a)  a = 0
     while (a < n * n * n) 
       a = a + n * n
+
 ```
+O(n)
+
 ```
 b)  sum = 0
     for (i = 0; i < n; i++)
@@ -13,11 +16,14 @@ b)  sum = 0
           for (l = k + 1; l < 10 + k; l++)
             sum++
 ```
+O(n^3)
 ```
 c)  bunnyEars = function(bunnies) {
       if (bunnies == 0) return 0
       return 2 + bunnyEars(bunnies-1)
     }
+
+O(n)
 ```
 
 **Exercise II**:

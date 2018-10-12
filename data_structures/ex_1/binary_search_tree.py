@@ -46,7 +46,7 @@ class BinarySearchTree:
         queue.append(current_node.right)
       cb(current_node.value)
     
-    print("================>", queue)
+    # print("================>", queue)
     # print("callback", cb)
 
     # pass
