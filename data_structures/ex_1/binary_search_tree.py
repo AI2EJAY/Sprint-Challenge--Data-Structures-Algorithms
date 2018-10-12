@@ -5,10 +5,51 @@ class BinarySearchTree:
     self.right = None
 
   def depth_first_for_each(self, cb):
+    """
+    search down from the root
+    go down 1 row and follow that path until you reach the end
+    """
     pass    
 
+    stack = []
+    stack.append(self)
+
+    while len(stack):
+      current_node = stack.pop()
+      if current_node.right:
+        stack.append(current_node.right)
+      if current_node.left:
+        stack.append(current_node.left)
+      cb(current_node.value)
+
   def breadth_first_for_each(self, cb):
-    pass
+    """
+    search down from the root
+    go down 1 row at a time checking what the tree contains
+    if not what we are searching for start checking it's children
+
+    A tip was to use a queue: 
+      20 
+    |   |
+    10  19
+    """
+
+      # cb(node.value)
+    queue = []
+    queue.append(self)
+
+    while len(queue):
+      current_node = queue.pop(0)
+      if current_node.left:
+        queue.append(current_node.left)
+      if current_node.right:
+        queue.append(current_node.right)
+      cb(current_node.value)
+    
+    print("================>", queue)
+    # print("callback", cb)
+
+    # pass
 
   def insert(self, value):
     new_tree = BinarySearchTree(value)
